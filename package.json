@@ -15,7 +15,7 @@
   "dependencies": {
     "antd": "^5.23.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.7",
     "eventsource-parser": "^1.0.0",
     "express": "^4.21.2",
     "firebase": "^11.1.0",
@@ -24,6 +24,7 @@
     "i18next-http-backend": "^2.2.0",
     "katex": "^0.16.7",
     "mongodb": "^6.13.0",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.2",
@@ -62,7 +63,7 @@
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
     "url-loader": "^4.1.1",
-    "webpack": "^5.76.3",
+    "webpack": "^5.98.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
   }

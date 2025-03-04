@@ -1,9 +1,14 @@
 const path = require("path");
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const stylesHandler = MiniCssExtractPlugin.loader;
 const TerserPlugin = require("terser-webpack-plugin");
+const dotenv = require('dotenv')
+
+// this will update the process.env with environment variables in .env file
+dotenv.config();
 
 const lessRegex = /\.less$/;
 const lessModuleRegex = /\.module\.less$/;
@@ -21,6 +26,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".css", ".less", ".mjs"],
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      // process: "process/browser",
     },
   },
   module: {
@@ -117,5 +123,8 @@ module.exports = {
       filename: "static/css/[name].css",
       chunkFilename: "static/css/[name].chunk.css",
     }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env) // Define process.env globally
+    })
   ],
 };
